@@ -1,0 +1,22 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: simple-python
+  labels:
+    app: python
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: python
+  template:
+    metadata:
+      labels:
+        app: python
+    spec:
+      containers:
+      - name: python-app
+        image: 531662794at/python-web
+        ports:
+        - containerPort: 5000
+
