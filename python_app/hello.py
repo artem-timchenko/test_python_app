@@ -1,5 +1,5 @@
 from flask import *
-from db_test import connect
+#from db_test import connect
 import socket
 import uuid
 
@@ -10,7 +10,7 @@ indent = "    "
 def hello_world():
     host_ip = socket.gethostbyname(socket.gethostname())
     host_mac = hex(uuid.getnode())
-    return str(host_ip) + " And the mac is: " + host_mac + "     " + connect()
+    return str(host_ip) + " And the mac is: " + host_mac # + "     " + connect()
 
 if __name__ == '__main__':
     app.run()
